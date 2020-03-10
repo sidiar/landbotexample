@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ChatBotLayout from './containers/ChatBotLayout';
+
+const navItems = [
+  { name: 'Artikler', url: '/artikler' },
+  { name: 'Chat', url: '/app' }
+];
+
+const app = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ height: '100%' }}>
+        <Switch>
+          <Route path="/" component={ChatBotLayout} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
-export default App;
+export default app;
