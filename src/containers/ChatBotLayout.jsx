@@ -9,10 +9,15 @@ const LandbotContainer = styled.div`
 
 class ChatBotLayout extends React.Component {
   componentDidMount() {
-    this.landbot = new LandbotFrameWidget({
+    // please, replace this line with 
+    // this.landbot = new LandbotFrameWidget({
+      
+    // like this...
+    this.landbot = new window.LandbotFrameWidget({
       index: 'https://yexir.com/u/H-4380-9TQP18V1UE815U93/index.html',
       container: '.landbot'
     });
+    
   }
 
   componentWillUnmount() {
